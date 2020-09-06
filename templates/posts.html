@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block title %} Страница с постами {% endblock %} {% block body %}
+<div class="container mt-5">
+    <h1>Все посты</h1>
+    {% for el in articles %}
+    <div class="alert alert-info">
+        <h2>{{ el.title }}</h2>
+        <p>{{ el.intro }}</p>
+        <p><b>Дата публикации: {{ el.date.date() }}</b></p>
+        <a href="/posts/{{ el.id }}" class="btn btn-warning">Показать</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
